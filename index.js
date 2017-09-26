@@ -1,11 +1,6 @@
 const express = require('express')
-<<<<<<< HEAD
 const mongoose = require('./db/connection')
-// const bodyParser = ('body-parser')
-=======
-const mongoose = require('mongoose')
 const bodyParser = ('body-parser')
->>>>>>> a554d31af6ba5d674fa71aac8228f8a55cc22f65
 const hbs = require("express-handlebars")
 
 const app = express()
@@ -27,10 +22,9 @@ app.listen(4000, () => {
 
 
 app.get("/", function(req, res){
-
-    Movie.find({}).then(movies => {
-      res.render("index", {
+  Movie.find({}).then(movies => {
+    res.render("index", {
         movies: movies
-      });
-    })
+    });
+  })
 });
