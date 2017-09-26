@@ -26,5 +26,13 @@ app.get("/", function(req, res){
     res.render("index", {
         movies: movies
     });
-  })
+  });
+});
+
+app.get("/movie/:name", function(req, res) {
+  Movie.findOne({name: req.params.name}).then(function(movie) {
+    res.render('show', {
+      movie: movie
+    });
+  });
 });

@@ -1,10 +1,10 @@
-<h2>{{movies.length}} movies</h2>
+<h2>Movies</h2>
 
 
 
-{{#each movie as |movie index|}}
+{{#each movies as |movie index|}}
 <h3>
-  <a href="/movie/{{movie.name}}">{{movie.name}} for President in {{movie.year}}</a>
+  <a href="/movie/{{movie.title}}">{{movie.title}}</a>
 </h3>
 {{/each}}
 
