@@ -1,0 +1,17 @@
+<h2>{{movies.length}} movies</h2>
+
+
+
+{{#each movie as |movie index|}}
+<h3>
+  <a href="/movie/{{movie.name}}">{{movie.name}} for President in {{movie.year}}</a>
+</h3>
+{{/each}}
+
+
+
+<!-- <form action="/movie" method="post">
+  <input name="movie[name]" type="text" placeholder="Name"/>
+    <input name="movie[year]" type="number" placeholder="Year"/>
+    <button type="submit">Run for Office</button>
+</form> -->

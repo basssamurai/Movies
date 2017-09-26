@@ -5,6 +5,6 @@ var Movie = mongoose.model('Movie')
 
 Movie.remove({}).then(() => {
   Movie.collection.insert(seedData).then(() => {
-    process.exit
+    process.exit()
   })
 })
