@@ -1,0 +1,26 @@
+{
+  "name": "Movies",
+  "version": "1.0.0",
+  "description": "Movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basssamurai/Movies.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basssamurai/Movies/issues"
+  },
+  "homepage": "https://github.com/basssamurai/Movies#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.11.13"
+  }
+}
