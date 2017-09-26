@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = ('body-parser')
-const hbs = require("hbs")
+const hbs = require("express-handlebars")
 
 const app = express()
 
