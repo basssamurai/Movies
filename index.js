@@ -24,6 +24,13 @@ app.listen(4000, () => {
 })
 
 
+
+// homepage redirect
+app.get('/', (req, res) => {
+    res.redirect('/movies')
+})
+
+// index view
 app.get("/movies", function(req, res){
   Movie.find({}).then(movies => {
     res.render("index", {
@@ -32,7 +39,8 @@ app.get("/movies", function(req, res){
   });
 });
 
-app.get("/movie/:title", function(req, res) {
+// show view
+app.get("/movies/:title", function(req, res) {
   Movie.findOne({title: req.params.title}).then(function(movie) {
     res.render('show', {
       movie: movie
@@ -46,3 +54,20 @@ app.post('/movies', (req, res) => {
     res.redirect('/movies/' + movie.title)
   });
 });
+
+
+//update
+app.post('/movies/:title', (req, res) => {
+  Movie.findOneAndUpdate({title: req.params.title}, req.body.movie, {new: true}).then(movie => {
+    res.redirect('/movies/' + movie.title)
+  })
+
+})
+
+//delete
+app.post("/movies/:title/delete", (req, res) => {
+  Candidate.findOneAndRemove({title: req.params.title})
+    .then(() => {
+      res.redirect("/movies")
+    })
+})
