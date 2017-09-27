@@ -1,9 +1,44 @@
 [
   {
     "title": "Star Wars",
-    "year": 1979,
+    "year": 1977,
     "director": "George Lucas",
     "photo_url": "http://www.my-sf.com/wp-content/uploads/2015/08/Star-Wars-1977-theatrical-poster.jpg"
+  },
 
+  {
+    "title": "Alien",
+    "year": 1979,
+    "director": "Ridley Scott",
+    "photo_url": "http://www.iceposter.com/thumbs/MOV_9f7a2fc4_b.jpg"
+  },
+
+  {
+    "title": "Jurassic Park",
+    "year": 1993,
+    "director": "Stephen Spielberg",
+    "photo_url": "http://img.moviepostershop.com/jurassic-park-movie-poster-1992-1010471365.jpg"
+  },
+
+  {
+    "title": "Terminator 2: Judgment Day",
+    "year": 1991,
+    "director": "James Cameron",
+    "photo_url": "https://images-na.ssl-images-amazon.com/images/I/61id7dm4b6L._SY550_.jpg"
+  },
+
+  {
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "director": "Quentin Tarantino",
+    "photo_url": "https://ih0.redbubble.net/image.57066806.8556/flat,800x800,075,f.u4.jpg"
+  },
+
+  {
+    "title": "Fight Club",
+    "year": 1999,
+    "director": "David Fincher",
+    "photo_url": "https://9to5toys.files.wordpress.com/2015/06/fight-club-poster.jpg?quality=82&strip=all"
   }
+
 ]
