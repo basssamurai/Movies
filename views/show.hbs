@@ -3,3 +3,19 @@
 <p> {{movie.year}} </p>
 <p> {{movie.director}} </p>
 <img src='{{movie.photo_url}}' height='470' width='300'>
+
+
+<!-- UPDATE FORM  -->
+<h4> Edit movie </h4>
+<form action="/movies/{{movie.title}}" method="post">
+  <input name="movie[title]" type="text" placeholder="Title"/>
+  <input name="movie[year]" type="number" placeholder="Year"/>
+  <input name="movie[director]" type="text" placeholder="Director"/>
+  <input name="movie[photo_url]" type="text" placeholder="Photo_URL"/>
+  <button type="submit">Edit Movie</button>
+</form>
+
+<!-- DELETE FORM  -->
+<form method="post" action="/movies/{{movie.name}}/delete">
+  <button type="submit">Delete Movie</button>
+</form>
