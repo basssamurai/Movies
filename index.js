@@ -21,7 +21,7 @@ app.listen(4000, () => {
 })
 
 
-app.get("/", function(req, res){
+app.get("/movies", function(req, res){
   Movie.find({}).then(movies => {
     res.render("index", {
         movies: movies
@@ -34,5 +34,12 @@ app.get("/movie/:title", function(req, res) {
     res.render('show', {
       movie: movie
     });
+  });
+});
+
+//create
+app.post('/movies', (req, res) => {
+  Movie.create(req.body.movie).then(movie => {
+    res.redirect('/movie/' + movie.title)
   });
 });
