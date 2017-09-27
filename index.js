@@ -64,9 +64,10 @@ app.post('/movies/:title', (req, res) => {
 
 })
 
+
 //delete
 app.post("/movies/:title/delete", (req, res) => {
-  Candidate.findOneAndRemove({title: req.params.title})
+  Movie.findOneAndRemove({title: req.params.title})
     .then(() => {
       res.redirect("/movies")
     })
