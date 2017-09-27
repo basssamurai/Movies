@@ -29,8 +29,8 @@ app.get("/", function(req, res){
   });
 });
 
-app.get("/movie/:name", function(req, res) {
-  Movie.findOne({name: req.params.name}).then(function(movie) {
+app.get("/movie/:title", function(req, res) {
+  Movie.findOne({title: req.params.title}).then(function(movie) {
     res.render('show', {
       movie: movie
     });
