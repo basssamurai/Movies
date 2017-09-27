@@ -4,14 +4,14 @@
 
 {{#each movies as |movie index|}}
 <h3>
-  <a href="/movie/{{movie.title}}">{{movie.title}}</a>
+  <a href="/movies/{{movie.title}}">{{movie.title}}</a>
 </h3>
 {{/each}}
 
 
 <h4> Add a new movie </h4>
-<form action="/movie" method="post">
-  <input name="movie[name]" type="text" placeholder="Name"/>
+<form action="/movies" method="post">
+  <input name="movie[title]" type="text" placeholder="Title"/>
   <input name="movie[year]" type="number" placeholder="Year"/>
   <input name="movie[director]" type="text" placeholder="Director"/>
   <input name="movie[photo_url]" type="text" placeholder="Photo_URL"/>

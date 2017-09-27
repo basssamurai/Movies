@@ -43,6 +43,6 @@ app.get("/movie/:title", function(req, res) {
 //create
 app.post('/movies', (req, res) => {
   Movie.create(req.body.movie).then(movie => {
-    res.redirect('/movie/' + movie.title)
+    res.redirect('/movies/' + movie.title)
   });
 });
