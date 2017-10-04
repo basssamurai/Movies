@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('./db/connection')
 const parser = require('body-parser')
 const hbs = require("hbs")
+const cors = require('cors')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.set("view engine", "hbs")
 app.use(express.static(__dirname + '/public'))
 app.use(parser.json())
 app.use(parser.urlencoded({ extended: true }))
+app.use(cors())
 
 
 let Movie = mongoose.model('Movie')
