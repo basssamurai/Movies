@@ -21,7 +21,7 @@ app.listen(4000, () => {
 })
 
 
-
+a
 // homepage redirect
 app.get('/', (req, res) => {
     res.redirect('/movies')
