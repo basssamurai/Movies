@@ -32,25 +32,21 @@ app.get('/', (req, res) => {
 // index view
 app.get("/movies", function(req, res){
   Movie.find({}).then(movies => {
-    res.render("index", {
-        movies: movies
-    });
+    res.json(movies)
   });
 });
 
 // show view
 app.get("/movies/:title", function(req, res) {
   Movie.findOne({title: req.params.title}).then(function(movie) {
-    res.render('show', {
-      movie: movie
-    });
+    res.json(show);
   });
 });
 
 //create
 app.post('/movies', (req, res) => {
   Movie.create(req.body.movie).then(movie => {
-    res.redirect('/movies/' + movie.title)
+    res.json('/movies/' + movie.title)
   });
 });
 
@@ -58,7 +54,7 @@ app.post('/movies', (req, res) => {
 //update
 app.post('/movies/:title', (req, res) => {
   Movie.findOneAndUpdate({title: req.params.title}, req.body.movie, {new: true}).then(movie => {
-    res.redirect('/movies/' + movie.title)
+    res.json('/movies/' + movie.title)
   })
 
 })
@@ -68,6 +64,6 @@ app.post('/movies/:title', (req, res) => {
 app.post("/movies/:title/delete", (req, res) => {
   Movie.findOneAndRemove({title: req.params.title})
     .then(() => {
-      res.redirect("/movies")
+      res.json("/movies")
     })
 })
