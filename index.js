@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/movies')
 app.set("view engine", "hbs")
 
 app.use(express.static(__dirname + '/public'))
-app.use(parser.json())
+app.use(parser.json({ extended: true }))
 app.use(parser.urlencoded({ extended: true }))
 app.use(cors())
 
@@ -46,24 +46,24 @@ app.get("/movies/:title", function(req, res) {
 //create
 app.post('/movies', (req, res) => {
   Movie.create(req.body.movie).then(movie => {
-    res.json('/movies/' + movie.title)
+    res.json(movie)
   });
 });
 
 
 //update
-app.post('/movies/:title', (req, res) => {
+app.put('/movies/:title', (req, res) => {
   Movie.findOneAndUpdate({title: req.params.title}, req.body.movie, {new: true}).then(movie => {
-    res.json('/movies/' + movie.title)
+    res.json(movie)
   })
 
 })
 
 
 //delete
-app.post("/movies/:title/delete", (req, res) => {
+app.delete("/movies/:title/delete", (req, res) => {
   Movie.findOneAndRemove({title: req.params.title})
     .then(() => {
-      res.json("/movies")
+      res.json({success: true})
     })
 })
